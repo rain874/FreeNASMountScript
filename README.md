@@ -3,6 +3,7 @@ This Bash Scritp check FreeNAS over Ping and sending a MagicPack (WOL) and then 
 
 # Testing: 
 FreeNAS FreeNAS-11.3-U2
+
 Debian 10.3 (Buster) 
 
 # One Step
