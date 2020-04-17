@@ -39,6 +39,6 @@ then
 else
   echo -e $datum $IP "| Host not Found, sending a MagicPacket (WOL), please restart the Script in 5-10 min" >> /var/log/freeNASmount.log
   su unixben -c 'notify-send -t 20000 "Warnung" "FreeNAS wurde nicht gemountet"' 
-  echo -e $(echo $(printf 'f%.0s' {1..12}; printf "$(echo $MAC | sed 's/://g')%.0s" {1..16}) | sed -e 's/../\\x&/g') | nc -w1 -u -b $Broadcast $PortNumber
+  echo -e $(echo $(printf 'f%.0s' {1..12}; printf "$(echo $MAC | sed 's/://g')%.0s" {1..16}) | sed -e 's/../\\x&/g') | nc -w1 -u -b $BROADCAST $PORT
 fi
 
