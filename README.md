@@ -15,9 +15,15 @@ Debian 10.3 (Buster)
 
 # Requirements
 
-- apt-get install notify-send
-- apt-get install nfs-common portmap
+> Install this package first
+
+```shell
+$ apt-get install notify-send
+$ apt-get install nfs-common portmap
+```
+
 - The network card of your FreeNAS must support WOL (wake on lan) and it must also be activated in the BIOS / UEFI uefi
 
-FreeNASMountScript has to be registered as /etc/systemd/system for AutoStart
+
 # coming soon ...
+FreeNASMountScript has to be registered as /etc/systemd/system for AutoStart
