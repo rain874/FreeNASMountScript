@@ -3,10 +3,10 @@
 This Bash Scritp check FreeNAS over Ping and Mount FreeNAS (SMB Share) on Linux Debian Desktop or ohter Distribution 
 
 # Testing: 
-Server
+Server:
 FreeNAS FreeNAS-11.3-U2
 
-Client
+Client:
 Debian 10.3 (Buster) 
 
 # One Step
