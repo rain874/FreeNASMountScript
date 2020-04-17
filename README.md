@@ -14,7 +14,9 @@ make a NFS Share under FreeNAS WebInterface "Sharing" -> "NFS"
 
 # Requirements
 apt-get install notify-send
+
 apt-get install nfs-common portmap
+
 The network card of your FreeNAS must support WOL (wake on lan) and it must also be activated in the BIOS / UEFI uefi
 
 FreeNASMountScript has to be registered as /etc/systemd/system for AutoStart
