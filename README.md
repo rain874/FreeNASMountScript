@@ -31,6 +31,8 @@ First, a .service file must be created under /etc/systemd/system, e.g. with the 
 
 [Unit]
 Description=FreeNASMountScript
+After=network-online.target
+Wants=network-online.target
 
 [Service]
 Type=simple
