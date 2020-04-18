@@ -24,6 +24,21 @@ $ apt-get install nfs-common portmap
 
 - The network card of your FreeNAS must support WOL (wake on lan) and it must also be activated in the BIOS / UEFI uefi
 
+# Create .service file for AutoStart
+First, a .service file must be created under /etc/systemd/system, e.g. with the file name freeNASmount.service. You then edit this file with an editor with root rights and insert the following content:
 
-# coming soon ...
-FreeNASMountScript has to be registered as /etc/systemd/system for AutoStart
+```bash
+
+[Unit]
+Description=FreeNASMountScript
+
+[Service]
+Type=simple
+ExecStart=/root/freeNASmount.sh
+
+[Install]
+WantedBy=multi-user.target
+
+
+```
+
