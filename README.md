@@ -43,15 +43,15 @@ WantedBy=multi-user.target
 
 
 ```
-#  Enable
+#  systemctl Enable
 ```bash
 systemctl enable freeNASmount.service
 ```
-#  Start
+#  systemctl Start
 ```bash
 systemctl start freeNASmount.service
 ```
-#  Check Status
+#  systemctl Check Status
 ```bash
 systemctl status freeNASmount.service
 ```
