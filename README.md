@@ -55,3 +55,5 @@ systemctl start freeNASmount.service
 ```bash
 systemctl status freeNASmount.service
 ```
+#  Donations
+- Thanks for you Support <a href="https://www.paypal.me/bashBACKUPPER" target="_blank">PayPal</a>
