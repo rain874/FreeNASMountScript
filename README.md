@@ -1,5 +1,7 @@
 # FreeNASMountScript (NFS Share)
-This Bash Scritp check FreeNAS over Ping and sending a MagicPack (WOL) and then mount FreeNAS (NFS Share) on Linux Debian Desktop or ohter Distribution 
+This bash script checks the availibility of FreeNAS within the network by sending a ping. If
+FreeNAS is not reachable, MagiPack (Work on LAN) will be sent to start FreeNAS. In case
+it is reachable the NFS Share will be bound to the Debian Filesystem.
 
 # Testing: 
 FreeNAS FreeNAS-11.3-U2
@@ -7,13 +9,16 @@ FreeNAS FreeNAS-11.3-U2
 Debian 10.3 (Buster) 
 
 # Please note
-
-- Change the Variables at the beginning of the script IP, RELEASE, MOUNTPOINT, MAC, BROADCAST
-- check activatet WOL support for FreeNAS
-- check on FreeNAS WebInterface "Service" -> "NFS" -> "activated"
-- make a NFS Share under FreeNAS WebInterface "Sharing" -> "NFS"
+- Change the variable IP, RELEASE, MOUNTPOINT, MAC, BROADCAST in the beginning of the script. If needed also change the variable PORT.
+- Check if WOL is activated within your FreeNAS. Please check the motherboard
+manual.
+- Check the status of the NFS service in your FreeNAS Webinterface
+„Service“ → „NFS“ → „activated“
+- Check the status of NFS Share within your FreeNAS Webinterface
+„Sharing“ → „NFS“
 
 # Requirements
+To use the sripct following packages are needed:
 
 > Install this package first
 
@@ -21,11 +26,10 @@ Debian 10.3 (Buster)
 $ apt-get install notify-send
 $ apt-get install nfs-common portmap
 ```
-
-- The network card of your FreeNAS must support WOL (wake on lan) and it must also be activated in the BIOS / UEFI uefi
+- The FreeNAS network adapter has to support WOL (wake on LAN) and needs to be activated in BIOS/UEFI 
 
 # Create .service file for AutoStart
-First, a .service file must be created under /etc/systemd/system, e.g. with the file name freeNASmount.service. You then edit this file with an editor with root rights and insert the following content:
+First, a .service file must be created under /etc/systemd/system, e.g. with the file name freeNASmount.service. This file has to be edited with an editor with root access accordingly to  following content:
 
 ```bash
 
@@ -43,6 +47,7 @@ WantedBy=multi-user.target
 
 
 ```
+Perform following 3 commands:
 #  systemctl Enable
 ```bash
 systemctl enable freeNASmount.service
@@ -55,5 +60,14 @@ systemctl start freeNASmount.service
 ```bash
 systemctl status freeNASmount.service
 ```
+At this point, NFS Share should be bound to the filesystem.
+
+# FreeNASMountScript Logging
+A logfile with timestamp will be place in the following path: /var/log/freeNASmount.log
+
 #  Donations
+
+Please feel free to send any question or remark to webmaster@itexem.de . 
+Support via PayPal is appreciated.
+   
 - Thanks for you Support <a href="https://www.paypal.me/bashBACKUPPER" target="_top">PayPal</a>
