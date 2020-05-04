@@ -7,6 +7,7 @@ it is reachable the NFS Share will be bound to the Debian Filesystem.
 FreeNAS FreeNAS-11.3-U2
 
 Debian 10.3 (Buster) 
+Debian 9.12 (Stretch)
 
 # Please note
 - Change the variable IP, RELEASE, MOUNTPOINT, MAC, BROADCAST in the beginning of the script. If needed also change the variable PORT.
