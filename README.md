@@ -16,6 +16,7 @@ manual.
 „Service“ → „NFS“ → „activated“
 - Check the status of NFS Share within your FreeNAS Webinterface
 „Sharing“ → „NFS“
+- Create a folder on the client system for example (/home/user/freeNAS)
 
 # Requirements
 To use the sripct following packages are needed:
@@ -23,7 +24,7 @@ To use the sripct following packages are needed:
 > Install this package first
 
 ```shell
-$ apt-get install notify-send
+$ apt-get install libnotify-bin
 $ apt-get install nfs-common portmap
 ```
 - The FreeNAS network adapter has to support WOL (wake on LAN) and needs to be activated in BIOS/UEFI 
