@@ -1,14 +1,20 @@
 # FreeNASMountScript (NFS Share)
-This bash script checks the availibility of FreeNAS within the network by sending a ping. If
+This bash script checks the availibility of FreeNAS or TrueNAS within the network by sending a ping. If
 FreeNAS is not reachable, MagiPack (Work on LAN) will be sent to start FreeNAS. In case
 it is reachable the NFS Share will be bound to the Debian Filesystem.
 
 # Testing: 
-FreeNAS FreeNAS-11.3-U2
+ 
+TrueNAS-12.0-U6
+
+FreeNAS-11.3-U2
+
+Debian 11 (Bullseye)
 
 Debian 10.3 (Buster) 
 
 Debian 9.12 (Stretch)
+
 
 # Please note
 - Change the variable IP, RELEASE, MOUNTPOINT, MAC, BROADCAST in the beginning of the script. If needed also change the variable PORT.
